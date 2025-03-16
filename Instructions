@@ -1,0 +1,67 @@
+
+---
+
+## ⚙️ Installation  
+1. **Arduino IDE Setup**:  
+   - Install [ESP8266 Board Package](https://arduino.esp8266.com/stable/package_esp8266com_index.json)  
+     ```arduino
+     Tools → Board → Boards Manager → Search "ESP8266" → Install
+     ```  
+   - Install Libraries:  
+     ```arduino
+     Sketch → Include Library → Manage Libraries → Search "LiquidCrystal_I2C" → Install
+     ```  
+
+2. **Upload Code**:  
+   - **ESP8266 Code**: `WiFi_detector.ino` (Select Board: "NodeMCU 1.0")  
+   - **Arduino Code**: `Alert_System.ino`  
+
+---
+
+## 🛠️ Usage  
+1. **Power On**:  
+   - ESP creates WiFi: **SSID**: `FloodDetector`, **Password**: `password123`  
+
+2. **Access Web Interface**:  
+   - Connect to `FloodDetector` WiFi  
+   - Visit `http://192.168.4.1`  
+   - Monitor request counter  
+
+3. **Simulate Attacks**:  
+   - Visit 192.168.4.1 on your browser and refresh with speed again and again.
+                          OR
+   - **HTTP Flood**:  
+     ```bash
+     while true; do curl http://192.168.4.1; done
+     ```  
+
+4. **Observe Alerts**:  
+   - Red LED lights up  
+   - Buzzer sounds  
+   - LCD shows attack type & source  
+
+---
+
+## 🚨 Troubleshooting  
+| Issue                  | Solution |  
+|------------------------|----------|  
+| No alerts              | Check RX/TX connections, confirm voltage divider |  
+| LCD not displaying     | Verify I2C address (use scanner sketch) |  
+| ESP not connecting     | Ensure 3.3V power supply, reupload code |  
+
+---
+
+## 🔮 Future Improvements  
+- Integrate machine learning for anomaly detection  
+- Add SMS/email alerts via IoT platforms  
+- Implement battery-powered operation  
+- Integrate other attack detection also like deauther attack, beacon spam
+
+---
+
+## ⚠️ Disclaimer  
+Use only for educational purposes in controlled environments. Unauthorized network scanning/attacks may be illegal.  
+
+---
+
+**Developed with ❤️ by Paramveer singh
