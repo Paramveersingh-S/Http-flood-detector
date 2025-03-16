@@ -14,7 +14,7 @@
 
 2. **Upload Code**:  
    - **ESP8266 Code**: `WiFi_detector.ino` (Select Board: "NodeMCU 1.0")  
-   - **Arduino Code**: `Alert_System.ino`  
+   - **Arduino Code**: `Alert_uno.ino`  
 
 ---
 
